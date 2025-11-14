@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 
 import Sidebar from "./components/Sidebar";
-import MyCourses from "./components/Mycourses";
+import MyCourses from "./components/MyCourses";
+
 
 function App() {
   return (
