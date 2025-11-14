@@ -27,18 +27,22 @@ export default function Sidebar() {
           className="cursor-pointer hover:text-blue-400"
           onClick={() => navigate("/dashboard")}
         />
+
         <GraduationCap
           className="cursor-pointer hover:text-blue-400"
-          onClick={() => navigate("/mycourses")}
+          onClick={() => navigate("/mycourses")}   // 🔥 lowercase route
         />
+
         <Lightbulb
           className="cursor-pointer hover:text-blue-400"
           onClick={() => navigate("/ideas")}
         />
+
         <MessageSquare
           className="cursor-pointer hover:text-blue-400"
           onClick={() => navigate("/messages")}
         />
+
         <Settings
           className="cursor-pointer hover:text-blue-400"
           onClick={() => navigate("/settings")}
