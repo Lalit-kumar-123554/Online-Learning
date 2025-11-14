@@ -13,10 +13,10 @@ const courseSchema = new mongoose.Schema({
   topics: [
     {
       title: { type: String, required: true },
-      content: { type: String, default: "Content will be added soon." },
-    },
+      content: { type: String, default: "Content will be added soon." }
+    }
   ],
-  dueDate: { type: Date, default: Date.now },
+  dueDate: { type: Date, default: Date.now }
 });
 
 export default mongoose.model("Course", courseSchema);
