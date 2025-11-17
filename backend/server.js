@@ -2,8 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-
-import Course from "./models/Course.js"; // Correct model path
+import courseRoutes from "./routes/courseRoutes.js";
 
 dotenv.config();
 
@@ -16,16 +15,8 @@ app.get("/", (req, res) => {
   res.send("Backend running successfully 🚀");
 });
 
-// Fetch courses API
-app.get("/api/courses", async (req, res) => {
-  try {
-    const courses = await Course.find();
-    res.json(courses);
-  } catch (error) {
-    console.log("❌ Error fetching courses:", error);
-    res.status(500).json({ error: error.message });
-  }
-});
+// Course API route
+app.use("/api/courses", courseRoutes);
 
 const PORT = process.env.PORT || 5000;
 

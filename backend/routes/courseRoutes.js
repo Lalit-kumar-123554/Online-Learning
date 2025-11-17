@@ -3,21 +3,21 @@ import Course from "../models/Course.js";
 
 const router = express.Router();
 
-// ✅ POST (create course)
-router.post("/", async (req, res) => {
+// GET all courses
+router.get("/", async (req, res) => {
   try {
-    const newCourse = await Course.create(req.body);
-    res.status(201).json(newCourse);
+    const courses = await Course.find();
+    res.json(courses);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
 
-// ✅ GET all courses
-router.get("/", async (req, res) => {
+// POST add new course
+router.post("/", async (req, res) => {
   try {
-    const courses = await Course.find();
-    res.json(courses);
+    const newCourse = await Course.create(req.body);
+    res.status(201).json(newCourse);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
