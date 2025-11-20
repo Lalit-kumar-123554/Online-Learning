@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// POST add new course
+// POST new course
 router.post("/", async (req, res) => {
   try {
     const newCourse = await Course.create(req.body);
