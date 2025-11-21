@@ -13,7 +13,12 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: "https://online-learning-1-xf38.onrender.com",
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
+
 app.use(express.json());
 
 // API Routes
