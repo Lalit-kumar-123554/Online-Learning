@@ -5,6 +5,11 @@ import cors from "cors";
 import courseRoutes from "./routes/courseRoutes.js";
 
 dotenv.config();
+import userRoutes from "./routes/userRoutes.js";
+import progressRoutes from "./routes/progressRoutes.js";
+
+app.use("/api/users", userRoutes);
+app.use("/api/progress", progressRoutes);
 
 const app = express();
 app.use(cors());
